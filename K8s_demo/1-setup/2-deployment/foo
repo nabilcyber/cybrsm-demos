@@ -1,0 +1,5 @@
+  docker run -d \
+    --name seedfetcher \
+    --entrypoint sh \
+    cyberark/dap-seedfetcher \
+    -c "sleep infinity"

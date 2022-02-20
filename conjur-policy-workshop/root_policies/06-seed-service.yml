@@ -1,0 +1,23 @@
+    # =================================================
+    # SEED-SERVICE ROOT POLICY
+    # Create webservice and consumers role for the Seed Service
+    # Note 2-space indentation – this is created “under” the conjur base policy
+    # This policy must be bulk-loaded with other root policies.
+  # =================================================
+  - !policy
+    id: seed-generation
+    body:
+    - !webservice
+
+    # Hosts that generate seeds become members of the
+    # `consumers` group.
+    - !group consumers
+
+    # Authorize `consumers` to request seeds
+    - !permit
+      role: !group consumers
+      privilege: [ "execute" ]
+      resource: !webservice
+
+  # END SEED-SERVICE
+

@@ -1,0 +1,13 @@
+- !host {{ APP_NAMESPACE_NAME }}-admin
+- !policy
+  id: {{ APP_NAMESPACE_NAME }}
+  owner: !host {{ APP_NAMESPACE_NAME }}-admin
+  body:
+  - !group consumers
+
+# Grant authn-k8s & safe access roles to namespace consumer rol
+- !grant
+  roles:
+  - !group conjur/authn-k8s/{{ CLUSTER_AUTHN_ID }}/consumers			# group w/ authentication permissions in cluster
+  members:
+  - !group {{ APP_NAMESPACE_NAME }}/consumers

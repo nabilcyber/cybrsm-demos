@@ -1,0 +1,16 @@
+---
+- !policy
+  id: cust_portal
+  body:
+  - !variable password
+  - !group consumers
+
+  - !permit
+    role: !group consumers
+    privilege: [ read, execute ]
+    resources: !variable password
+
+  - !policy
+    id: nginx
+    body:
+    - !variable password

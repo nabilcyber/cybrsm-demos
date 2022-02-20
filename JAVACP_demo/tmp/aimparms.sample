@@ -1,0 +1,23 @@
+[Main]
+AcceptCyberArkEULA=Yes
+#CreateVaultEnvironment=yes
+CredFilePath=<Full path of file that contains credentials of Vault user that will be used to create the Provider Vault environment>
+VaultFilePath=<Full path of Vault file that describes the Vault the Provider will work with>
+OverrideExistingConfFile=no
+AppProviderUserLocation=Applications
+#HardenFSPermissions=no
+
+### In Repair/Upgrade the following parameters will be read from the existing "/etc/opt/CARKaim/conf/basic_appprovider.conf"
+### file unless they are uncommented and contain different values
+#AppProviderConfSafe=AppProviderConf
+#MainAppProviderConfFile=main_appprovider.conf.linux.<version>
+#AppProviderUser=Prov_<host_name>
+#PIMConfigurationSafe=PVWAConfig
+#PIMConfigurationFolder=Root
+#PIMPVConfigurationFileName=PVConfiguration.xml
+#PIMPoliciesConfigurationFileName=Policies.xml
+
+[CP]
+CacheLevel=persistent
+CacheRefreshInterval=3
+KeyStorage=Local

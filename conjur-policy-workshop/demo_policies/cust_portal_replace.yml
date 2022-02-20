@@ -1,0 +1,16 @@
+---
+- !policy
+  id: cust_portal
+  body:
+  - !variable key
+  - !group consumers
+  - !permit
+    role: !group consumers
+    privilege: [ read, execute ]
+    resources: !variable key
+
+- !host my_app
+
+- !grant
+  role: !group cust_portal/consumers
+  members: !host my_app

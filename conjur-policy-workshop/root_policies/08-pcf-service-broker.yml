@@ -1,0 +1,25 @@
+# =================================================
+# PCF SERVICE BROKER ROOT POLICY
+# Create host & permissions for PCF service broker
+# Note no indentation – this is created “under” the root policy
+# This policy must be bulk-loaded with other root policies.
+# Create one policy per PCF service broker.
+# =================================================
+
+- !policy
+  id: pcf
+  body:
+   - !host
+     id: pcf-service-broker
+
+   - !permit
+     role: !host pcf-service-broker
+     privileges: [ read ]
+     resource: !host pcf-service-broker
+
+   - !policy
+      id: sandbox
+      owner: !host pcf-service-broker
+
+# END PCF SERVICE BROKER
+

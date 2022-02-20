@@ -1,0 +1,26 @@
+#!/bin/bash 
+DEMO_DIRS=$(ls -d */)
+
+main() {
+  echo "Space before cleaning: $(du -sh -I .git .)"
+  clean
+  echo "Space after cleaning: $(du -sh -I .git .)"
+  git add .
+  git commit -m "checkpoint"
+  git push origin main
+}
+
+
+clean() {
+  for i in $DEMO_DIRS; do
+    pushd $i > /dev/null # use pushd/popd in case scripts use cd
+      ./_clean
+    popd > /dev/null
+  done
+  tfstate_files=$(find . | grep tfstate)
+  for i in $tfstate_files; do
+    rm $i
+  done
+}
+
+main "$*"
