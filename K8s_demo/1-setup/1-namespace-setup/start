@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash 
 
 source ../../../config/conjur.config
 source ../../../bin/conjur_utils.sh
@@ -35,10 +35,12 @@ clean_namespace() {
 ########################
 init_namespace() {
   mkdir -p ./manifests
+
   cat ./templates/CYBERARK-manifest.template.yaml			\
   | sed -e "s#{{ CYBERARK_NAMESPACE_NAME }}#$CYBERARK_NAMESPACE_NAME#g"	\
   | sed -e "s#{{ CYBERARK_NAMESPACE_ADMIN }}#$CYBERARK_NAMESPACE_ADMIN#g" \
   > ./manifests/$CYBERARK_NAMESPACE_NAME-manifest.yaml
+
   $CLI apply -f ./manifests/$CYBERARK_NAMESPACE_NAME-manifest.yaml -n $CYBERARK_NAMESPACE_NAME
 
   if [[ "$PLATFORM" == "openshift" ]]; then

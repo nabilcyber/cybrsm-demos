@@ -16,10 +16,8 @@ services:
       CONJUR_ADMIN_PASSWORD: $CONJUR_ADMIN_PASSWORD
     ports:
       - "$JENKINS_PORT:8080"
-#      - "50000:50000"
     volumes:
       - "jenkins:/var/jenkins_home"
-      - ../SELF_SERVE_DEMO:/selfserve
     restart: always
 
 volumes:

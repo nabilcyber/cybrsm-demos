@@ -15,6 +15,7 @@ main() {
 
   initialize_k8s_api_secrets
   verify_k8s_api_secrets 
+  initialize_authn_jwt_secrets
   get_indented_certs
   create_configmaps
   deploy_follower
@@ -72,6 +73,31 @@ verify_k8s_api_secrets() {
 }
 
 ########################
+initialize_authn_jwt_secrets() {
+  echo "Initializing JWT authentication variables..."
+
+
+  jwks_uri=$($CLI get --raw /.well-known/openid-configuration | jq -r '.jwks_uri')
+  issuer=$($CLI get --raw /.well-known/openid-configuration | jq -r '.issuer')
+
+  conjur_set_variable						\
+  	conjur/authn-jwt/$APP_NAMESPACE_NAME/jwks-uri		\
+	$jwks_uri
+
+  conjur_set_variable						\
+  	conjur/authn-jwt/$APP_NAMESPACE_NAME/issuer		\
+	$issuer
+
+  conjur_set_variable						\
+  	conjur/authn-jwt/$APP_NAMESPACE_NAME/token-app-property	\
+	sub
+
+  conjur_set_variable						\
+  	conjur/authn-jwt/$APP_NAMESPACE_NAME/audience		\
+	https://kubernetes.default.svc.cluster.local
+}
+
+########################
 get_indented_certs() {
   cat $LEADER_CERT_FILE \
   | awk '{ print "    " $0 }' > master-cert.indented
@@ -119,10 +145,12 @@ create_configmaps() {
 
 ########################
 deploy_follower() {
-  sed -e "s#{{ CONJUR_SEEDFETCHER_IMAGE }}#$SEEDFETCHER_IMAGE#g" 	\
-	./templates/follower-deployment-manifest.template.yaml 			\
+  cat ./templates/follower-deployment-manifest.template.yaml 		\
+    | sed -e "s#{{ CONJUR_LEADER_HOSTNAME }}#$CONJUR_LEADER_HOSTNAME#g" \
+    | sed -e "s#{{ CONJUR_LEADER_HOST_IP }}#$CONJUR_LEADER_HOST_IP#g"		\
+    | sed -e "s#{{ CONJUR_SEEDFETCHER_IMAGE }}#$SEEDFETCHER_IMAGE#g" 	\
     | sed -e "s#{{ CONJUR_APPLIANCE_IMAGE }}#$APPLIANCE_IMAGE#g" 	\
-    > ./manifests/follower-deployment-manifest.yaml
+  > ./manifests/follower-deployment-manifest.yaml
   $CLI apply -f ./manifests/follower-deployment-manifest.yaml -n $CYBERARK_NAMESPACE_NAME
 
   sleep 3

@@ -12,8 +12,8 @@ main() {
   fi
   deploy_mysql_db 
   echo "Waiting for MySQL DB to become available..."
-  sleep 30
-  init_mysql
+  sleep 45
+  ./init_mysql.sh
 }
 
 ########################
@@ -36,24 +36,6 @@ deploy_mysql_db() {
     | sed "s#{{ MYSQL_DBNAME }}#$MSQL_DB_NAME#g"			\
     > ./manifests/mysql-manifest.yaml
   $CLI apply -f ./manifests/mysql-manifest.yaml -n $CYBERARK_NAMESPACE_NAME
-}
-
-################################
-init_mysql() {
-  echo "Initializing MySQL database..."
-  # create db
-  cat db_create_petclinic.sql          				\
-  | $CLI -n $CYBERARK_NAMESPACE_NAME exec -i pod/mysql-db-0 --	\
-        mysql -h $DB_URL -u root --password=$MYSQL_ROOT_PASSWORD
-  # load data
-  cat db_load_petclinic.sql            				\
-  | $CLI -n $CYBERARK_NAMESPACE_NAME exec -i pod/mysql-db-0 --	\
-        mysql -h $DB_URL -u root --password=$MYSQL_ROOT_PASSWORD
-  # grant user access
-  quoted_pwd=\'$MYSQL_PASSWORD\'
-  echo "DROP USER $MYSQL_USERNAME; CREATE USER $MYSQL_USERNAME IDENTIFIED BY $quoted_pwd REQUIRE NONE; GRANT ALL PRIVILEGES ON $MYSQL_DBNAME.* TO $MYSQL_USERNAME;"		\
-  | $CLI -n $CYBERARK_NAMESPACE_NAME exec -i pod/mysql-db-0 --	\
-        mysql -h $DB_URL -u root --password=$MYSQL_ROOT_PASSWORD
 }
 
 main "$@"

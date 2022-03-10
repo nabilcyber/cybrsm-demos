@@ -28,6 +28,10 @@ spec:
         name: conjur-follower
         role: follower
     spec:
+      hostAliases:
+      - ip: "{{ CONJUR_LEADER_HOST_IP }}"
+        hostnames:
+        - "{{ CONJUR_LEADER_HOSTNAME }}"
       serviceAccountName: dap-authn-service
       volumes:
       - name: seedfile
@@ -128,6 +132,11 @@ spec:
         command: ["/tmp/seedfile/start-follower.sh"]
         imagePullPolicy: IfNotPresent
         env:
+          # Pod service account cert for authn-jwt
+          # to call the clusters JWKS URI
+          # The path may vary per K8s implementation 
+          - name: SSL_CERT_FILE
+            value: /run/secrets/kubernetes.io/serviceaccount/ca.crt
 
           # from dap-config map
           - name: CONJUR_LEADER_PORT

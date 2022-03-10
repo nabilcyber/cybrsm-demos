@@ -8,6 +8,8 @@
 # Grant authn-k8s & safe access roles to namespace consumer rol
 - !grant
   roles:
-  - !group conjur/authn-k8s/{{ CLUSTER_AUTHN_ID }}/consumers			# group w/ authentication permissions in cluster
+  # groups w/ authentication permissions in cluster
+  - !group conjur/authn-jwt/{{ APP_NAMESPACE_NAME }}/consumers	
+  - !group conjur/authn-k8s/{{ CLUSTER_AUTHN_ID }}/consumers
   members:
   - !group {{ APP_NAMESPACE_NAME }}/consumers

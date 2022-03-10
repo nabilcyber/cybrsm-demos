@@ -1,7 +1,6 @@
 FROM alpine:3.12.1
 
-RUN apk update											\
-    && apk add 											\
+RUN apk add --update --no-cache									\
 	bash curl vim										\
 	mysql-client										\
     && curl -LO https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64		\
@@ -14,12 +13,27 @@ RUN apk update											\
     && curl -sSL https://raw.githubusercontent.com/cyberark/summon-conjur/master/install.sh	\
       | env TMPDIR=$(mktemp -d) bash
 
-COPY secrets.yml mysql_REST.sh mysql_provider.sh mysql_secretless.sh mysql_summon.sh uid_entrypoint.sh /labs/
+# Install python/pip
+ENV PYTHONUNBUFFERED=1
+RUN apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python
+RUN python3 -m ensurepip
+RUN pip3 install --no-cache --upgrade pip setuptools requests
+
+COPY 	conjur-cert.pem 	\
+	secrets.yml		\
+	mysql_REST.sh 		\
+	mysql_REST.py		\
+	mysql_provider.sh	\
+	mysql_secretless.sh	\
+	mysql_summon.sh		\
+	mysql_file.sh 		\
+	mysql_jwt.sh 		\
+	uid_entrypoint.sh 	\
+	/labs/
 
 WORKDIR /labs
 
-
 # setup entrypoint for default user
-RUN chmod g=u /etc/passwd /labs/*.sh
+RUN chmod g=u /etc/passwd /labs/*
 ENTRYPOINT [ "/labs/uid_entrypoint.sh" ]
 USER 1001

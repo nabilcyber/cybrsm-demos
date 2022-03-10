@@ -11,7 +11,7 @@ export CONJUR_BACKUP_KEY=./key
 #   logged into the CLI as the admin user.
 
 #################
-main() {
+mainxx() {
   ./precheck_master.sh
   ./stop
   while [[ "$($DOCKER ps -a | grep $CONJUR_LEADER_CONTAINER_NAME)" != "" ]]; do
@@ -22,8 +22,11 @@ main() {
   shared_volumes_up
 set -x
   master_up
+}
+main() {
   cli_up
-  ./enable_dap_node_for_k8s.sh
+  ./enable_dap_node_for_authnk8s.sh
+  ./enable_dap_node_for_authnjwt_for_k8s.sh
   store_config_files_in_cache_dir	# do AFTER k8s config
 exit
   follower_up
@@ -58,7 +61,7 @@ master_up() {
     --volume $CONJUR_AUDIT_VOLUME:/var/log/conjur \
     --volume $CONJUR_NGINX_VOLUME:/var/log/nginx \
     --restart unless-stopped \
-    --security-opt seccomp:unconfined \
+    --security-opt $SECURITY_OPT \
     $CONJUR_APPLIANCE_IMAGE 
 
   # if true, restore master state from backup
@@ -91,7 +94,7 @@ cli_up() {
     --name $CLI_CONTAINER_NAME \
     --label role=cli \
     --restart unless-stopped \
-    --security-opt seccomp:unconfined \
+    --security-opt $SECURITY_OPT \
     --add-host "$CONJUR_LEADER_HOSTNAME:$CONJUR_LEADER_HOST_IP" \
     --entrypoint sh \
     $CLI_IMAGE \
@@ -111,13 +114,13 @@ store_config_files_in_cache_dir() {
   echo "Caching Conjur Leader certificate..."
   mkdir -p $CACHE_DIR
   rm -f $LEADER_CERT_FILE $FOLLOWER_CERT_FILE
-  $DOCKER cp -L $CONJUR_LEADER_CONTAINER_NAME:/opt/conjur/etc/ssl/conjur.pem $LEADER_CERT_FILE
+  $DOCKER exec $CONJUR_LEADER_CONTAINER_NAME cat /opt/conjur/etc/ssl/conjur.pem > $LEADER_CERT_FILE
 
   echo "Caching DAP Follower certificate..."
   rm -f $FOLLOWER_CERT_FILE
 #  $DOCKER exec $CONJUR_LEADER_CONTAINER_NAME \
 #	bash -c "evoke ca issue conjur-follower $CONJUR_LEADER_HOSTNAME"
-  $DOCKER cp -L $CONJUR_LEADER_CONTAINER_NAME:/opt/conjur/etc/ssl/conjur-follower.pem $FOLLOWER_CERT_FILE
+  $DOCKER exec $CONJUR_LEADER_CONTAINER_NAME cat /opt/conjur/etc/ssl/conjur-follower.pem > $FOLLOWER_CERT_FILE
 
   echo "Caching Conjur Follower seed file..."
   rm -f $FOLLOWER_SEED_FILE
