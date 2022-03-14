@@ -47,25 +47,26 @@ create_yaml_files() {
     | sed "s/namespace: $CYBERARK_NAMESPACE_NAME/namespace: $APP_NAMESPACE_NAME/"	\
     > ./dap-config-cm.yaml
 
-  sed -e "s#{{ APP_NAMESPACE_NAME }}#$APP_NAMESPACE_NAME#g"			\
-	./templates/provider-k8ssecrets-manifest.template.yaml			\
+  cat ./templates/provider-k8ssecrets-manifest.template.yaml	\
+  | sed -e "s#{{ APP_NAMESPACE_NAME }}#$APP_NAMESPACE_NAME#g"	\
   > ./provider-k8ssecrets-manifest.yaml
 
-  sed -e "s#{{ ACCOUNT_USERNAME }}#$ACCOUNT_USERNAME#g"		\
-	./templates/db-credentials.template.yaml			\
+  cat ./templates/db-credentials.template.yaml			\
+  | sed -e "s#{{ ACCOUNT_ADDRESS }}#$ACCOUNT_ADDRESS#g"		\
+  | sed -e "s#{{ ACCOUNT_DATABASE }}#$ACCOUNT_DATABASE#g"	\
+  | sed -e "s#{{ ACCOUNT_USERNAME }}#$ACCOUNT_USERNAME#g"	\
   | sed -e "s#{{ ACCOUNT_PASSWORD }}#$ACCOUNT_PASSWORD#g"	\
   > ./db-credentials.yaml
 
-  sed -e "s#{{ APP_NAMESPACE_NAME }}#$uname#g"			\
-	./templates/app-k8ssecrets-policy.template.yaml		\
+  cat ./templates/app-k8ssecrets-policy.template.yaml		\
+  | sed -e "s#{{ APP_NAMESPACE_NAME }}#$uname#g"		\
   > ./app-k8ssecrets-policy.yaml
 
-  sed -e "s#{{ APP_IMAGE }}#$APP_IMAGE#g"				\
-	./templates/app-k8ssecrets-manifest.template.yaml		\
+  cat ./templates/app-k8ssecrets-manifest.template.yaml			\
+  | sed -e "s#{{ APP_IMAGE }}#$APP_IMAGE#g"				\
   | sed -e "s#{{ SECRETS_PROVIDER_IMAGE }}#$SECRETS_PROVIDER_IMAGE#g"	\
   | sed -e "s#{{ APP_NAMESPACE_NAME }}#$APP_NAMESPACE_NAME#g"		\
   | sed -e "s#{{ CONJUR_AUTHN_URL }}#$CONJUR_AUTHN_URL#g"		\
-  | sed -e "s#{{ DB_URL }}#$DB_URL#g"					\
   > ./app-k8ssecrets-manifest.yaml
 }
 

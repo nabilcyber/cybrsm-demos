@@ -45,21 +45,21 @@ create_yaml_files() {
   echo "creating YAML files..."
 
   # DAP policy file
-  sed -e "s#{{ APP_NAMESPACE_NAME }}#$uname#g"			\
-	./templates/app-secretless-policy.template.yaml		\
+  cat ./templates/app-secretless-policy.template.yaml		\
+  | sed -e "s#{{ APP_NAMESPACE_NAME }}#$uname#g"			\
   | sed -e "s#{{ CLUSTER_AUTHN_ID }}#$CLUSTER_AUTHN_ID#g"	\
   | sed -e "s#{{ SECRETS_ACCESS_ROLE }}#$SECRETS_ACCESS_ROLE#g"	\
   > ./app-secretless-policy.yaml
 
   # DAP service config map
   $CLI get cm dap-config -n $CYBERARK_NAMESPACE_NAME -o yaml				\
-    | sed "s/namespace: $CYBERARK_NAMESPACE_NAME/namespace: $APP_NAMESPACE_NAME/"	\
-    > ./dap-config-cm.yaml
+  | sed "s/namespace: $CYBERARK_NAMESPACE_NAME/namespace: $APP_NAMESPACE_NAME/"	\
+  > ./dap-config-cm.yaml
 
   # Secretless config map
-  sed -e "s#{{ VAULT_NAME }}#$VAULT_NAME#g"                     \
-        ./templates/secretless-cm.template.yaml                 \
-  | sed -e "s#{{ DB_URL }}#$DB_URL#g"       			\
+  cat ./templates/secretless-cm.template.yaml			\
+  | sed -e "s#{{ VAULT_NAME }}#$VAULT_NAME#g"			\
+  | sed -e "s#{{ ACCOUNT_ADDRESS }}#$ACCOUNT_ADDRESS#g"		\
   | sed -e "s#{{ ACCOUNT_USERNAME }}#$ACCOUNT_USERNAME#g"	\
   | sed -e "s#{{ ACCOUNT_PASSWORD }}#$ACCOUNT_PASSWORD#g"       \
   > ./secretless.yaml
