@@ -3,10 +3,6 @@ Jody Hunt	26 Feb 2022
 
 GOAL: Use the appid claim in an Azure JWT to uniquely identify authorized applications for access to secrets in Conjur. This will typically be a user-facing application, where the user authenticates with an oauth2 workflow resulting in a short-lived Azure AD JWT specific to the application. The value of the appid claim is invariant across users. This serves to separate user identities from the application identity, and share the application's access to resources.
 
-DESIGN NOTES:
-
-  As of Conjur 12.5, the authn-jwt variable 'identity-path' is specific to an authn-jwt endpoint. This requires that every unique identity path requires its own authn-jwt endpoint (or all identities share the same path). This is a serious policy design limitation that will hopefully be remedied in a future version.
-
 AZURE AD JWT OVERVIEW:
 
   Azure AD supports two versions of OAuth2 tokens that can be identified by their headers or the version claim in their bodies.

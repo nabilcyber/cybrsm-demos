@@ -76,7 +76,22 @@ verify_k8s_api_secrets() {
 initialize_authn_jwt_secrets() {
   echo "Initializing JWT authentication variables..."
 
+  # hard-coded values, audience value may vary across K8s implementations
+  conjur_set_variable						\
+  	conjur/authn-jwt/$APP_NAMESPACE_NAME/token-app-property	\
+	"sub"
 
+  conjur_set_variable						\
+  	conjur/authn-jwt/$APP_NAMESPACE_NAME/audience		\
+	https://kubernetes.default.svc.cluster.local
+
+  # convention here is to match identity path to authn-jwt service id,
+  # which are currently required to be 1-1
+  conjur_set_variable						\
+  	conjur/authn-jwt/$APP_NAMESPACE_NAME/identity-path	\
+	"/$APP_NAMESPACE_NAME"
+
+  # values obtained from K8s cluster configuration
   jwks_uri=$($CLI get --raw /.well-known/openid-configuration | jq -r '.jwks_uri')
   issuer=$($CLI get --raw /.well-known/openid-configuration | jq -r '.issuer')
 
@@ -87,14 +102,6 @@ initialize_authn_jwt_secrets() {
   conjur_set_variable						\
   	conjur/authn-jwt/$APP_NAMESPACE_NAME/issuer		\
 	$issuer
-
-  conjur_set_variable						\
-  	conjur/authn-jwt/$APP_NAMESPACE_NAME/token-app-property	\
-	sub
-
-  conjur_set_variable						\
-  	conjur/authn-jwt/$APP_NAMESPACE_NAME/audience		\
-	https://kubernetes.default.svc.cluster.local
 }
 
 ########################

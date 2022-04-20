@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 export CONJUR_HOME=~/Conjur/cybrsm-demos
 
 case $1 in

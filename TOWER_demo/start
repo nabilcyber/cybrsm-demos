@@ -18,3 +18,6 @@ cat ../etc/$CONJUR_LEADER_HOSTNAME-$CONJUR_ACCOUNT.pem
 echo
 echo "Projects: /var/lib/awx/projects"
 echo "Tower start/stop: ansible-tower-service start/stop/restart"
+echo
+echo "CCP query format: Safe=<safe-name>;Object=<object-name>"
+echo

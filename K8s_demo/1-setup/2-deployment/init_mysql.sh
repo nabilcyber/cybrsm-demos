@@ -13,6 +13,6 @@ source ../../../config/conjur.config
         mysql -h localhost -u root --password=$MYSQL_ROOT_PASSWORD
   # grant user access
   quoted_pwd=\'$MYSQL_PASSWORD\'
-  echo "DROP USER $MYSQL_USERNAME; CREATE USER $MYSQL_USERNAME IDENTIFIED BY $quoted_pwd REQUIRE NONE; GRANT ALL PRIVILEGES ON $MYSQL_DBNAME.* TO $MYSQL_USERNAME;"		\
+  echo "DROP USER IF EXISTS $MYSQL_USERNAME; CREATE USER $MYSQL_USERNAME IDENTIFIED BY $quoted_pwd REQUIRE NONE; GRANT ALL PRIVILEGES ON $MYSQL_DBNAME.* TO $MYSQL_USERNAME;"		\
   | $CLI -n $CYBERARK_NAMESPACE_NAME exec -i pod/mysql-db-0 --	\
         mysql -h localhost -u root --password=$MYSQL_ROOT_PASSWORD

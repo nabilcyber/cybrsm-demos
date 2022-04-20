@@ -11,7 +11,7 @@ export CONJUR_BACKUP_KEY=./key
 #   logged into the CLI as the admin user.
 
 #################
-mainxx() {
+main() {
   ./precheck_master.sh
   ./stop
   while [[ "$($DOCKER ps -a | grep $CONJUR_LEADER_CONTAINER_NAME)" != "" ]]; do
@@ -22,14 +22,12 @@ mainxx() {
   shared_volumes_up
 set -x
   master_up
-}
-main() {
   cli_up
   ./enable_dap_node_for_authnk8s.sh
   ./enable_dap_node_for_authnjwt_for_k8s.sh
+  $CONJUR_HOME/bin/enable_all_configured_authenticators.sh
   store_config_files_in_cache_dir	# do AFTER k8s config
-exit
-  follower_up
+#  follower_up
   load_demo_policy
   ./exec-into-cli.sh
 }

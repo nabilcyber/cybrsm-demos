@@ -10,6 +10,6 @@ source ../../config/conjur.config
   DB_UNAME=$2
   DB_PWD=\'$3\'
   echo "MySQL: Provisioning access for $DB_UNAME to database $DB_NAME..."
-  echo "DROP USER $DB_UNAME; CREATE USER $DB_UNAME IDENTIFIED BY $DB_PWD REQUIRE NONE; GRANT ALL PRIVILEGES ON $DB_NAME.* TO $DB_UNAME;"			\
+  echo "DROP USER IF EXISTS $DB_UNAME; CREATE USER $DB_UNAME IDENTIFIED BY $DB_PWD REQUIRE NONE; GRANT ALL PRIVILEGES ON $DB_NAME.* TO $DB_UNAME;"			\
   | $DOCKER exec -i $MYSQL_SERVER		\
         mysql -u root --password=$MYSQL_ROOT_PASSWORD
