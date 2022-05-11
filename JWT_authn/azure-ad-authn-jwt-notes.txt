@@ -58,7 +58,7 @@ AZURE AD JWT OVERVIEW:
 ---
 # authn-jwt endpoint 
 - !policy
-  id: conjur/authn-jwt/<endpoint-id>	<-- endpoint ID can be any string, e.g. azure-ad
+  id: conjur/authn-jwt/<endpoint-id>	<-- endpoint ID can be any string, e.g. aadv1
   body:
    - !variable issuer			<-- set to https://sts.windows.net/<tenant-id>
 
@@ -73,11 +73,10 @@ AZURE AD JWT OVERVIEW:
 
    - !variable identity-path		<-- not needed if host id policy is at root
 					    otherwise path from policy root to host id
-					    (see design note above)
 
 # host identity is the UUID value in the appid claim
 - !host
   id: 463be88f-d6af-4264-b3a2-048e5c3d9ea7			<-- value of "appid" claim
   annotations:
-    authn-jwt/aadv1/appid: 463be88f-d6af-4264-b3a2-048e5c3d9ea7	<-- value of "appid" claim
+    authn-jwt/aadv1/appid: 463be88f-d6af-4264-b3a2-048e5c3d9ea7	<-- annotation is <authn-jwt endpoint>/<value of token-app-property>: <value of "appid" claim>
 

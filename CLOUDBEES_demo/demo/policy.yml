@@ -1,0 +1,8 @@
+---
+- !policy
+  id: cbjenkins
+  annotations:
+    description: Conjur policy for Cloudbees Jenkins
+    jenkins: "true"
+  body:
+  - !host master

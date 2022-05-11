@@ -1,0 +1,106 @@
+#!/bin/bash
+source ./cloudbees-demo.config
+
+main() {
+  echo "-----"
+  if [[ "$1" == "del" ]]; then
+    delete_jenkins
+  fi
+  build_jenkins
+  start_jenkins
+  init_conjur
+}
+
+########################################
+delete_jenkins() {
+    if [[ "$($DOCKER ps -a | grep $CLOUDBEES_DEMO_CONTAINER)" == "" ]]; then
+      exit 0
+    fi
+    $DOCKER exec $CLOUDBEES_DEMO_CONTAINER \
+	service jenkins stop
+				# execute backup of jenkins state in container,
+				# writes backup file to host disk via WORKDIR mount
+    echo "Making backup of Jenkins state to ${PWD}/backup.tar.z..."
+    $DOCKER exec $CLOUDBEES_DEMO_CONTAINER \
+	tar czf backup.tar.z 			\
+	  $CLOUDBEES_JENKINS_HOME/support	\
+	  $CLOUDBEES_JENKINS_HOME/com.cloudbees.jenkins.support.filter.ContentMappings.xml	\
+	  $CLOUDBEES_JENKINS_HOME/user-activity	\
+	  $CLOUDBEES_JENKINS_HOME/updates	\
+	  $CLOUDBEES_JENKINS_HOME/.lastStarted	\
+	  $CLOUDBEES_JENKINS_HOME/config.xml	\
+	  $CLOUDBEES_JENKINS_HOME/hudson.model.UpdateCenter.xml	\
+	  $CLOUDBEES_JENKINS_HOME/com.cloudbees.jenkins.plugins.license.RegistrationStateConfiguration.xml	\
+	  $CLOUDBEES_JENKINS_HOME/messaging.t		\
+	  $CLOUDBEES_JENKINS_HOME/nodeMonitors.xml	\
+	  $CLOUDBEES_JENKINS_HOME/cb-envelope		\
+	  $CLOUDBEES_JENKINS_HOME/queue.xml.bak		\
+	  $CLOUDBEES_JENKINS_HOME/secrets
+
+    echo "Stopping and removing container..."
+    $DOCKER stop $CLOUDBEES_DEMO_CONTAINER
+    $DOCKER rm $CLOUDBEES_DEMO_CONTAINER
+    exit 0
+}
+
+########################################
+build_jenkins() {
+  pushd build
+    ./build.sh
+  popd
+}
+
+########################################
+start_jenkins() {
+  # WORKDIR is assumed to be a subdirectory of current directory.
+  # It is mounted at the mountpount w/ same name in container.
+  if [[ "$($DOCKER ps | grep $CLOUDBEES_DEMO_CONTAINER)" == "" ]]; then
+#    $DOCKER volume create $CLOUDBEES_DEMO_VOLUME	# for persistence of state across container instances
+    cp $LEADER_CERT_FILE .$WORKDIR/conjur-cert.pem
+    $DOCKER run -d 							\
+      --hostname cbjenkins						\
+      --name $CLOUDBEES_DEMO_CONTAINER 					\
+      --add-host "$CONJUR_LEADER_HOSTNAME:$CONJUR_LEADER_HOST_IP"	\
+      -v ${PWD}${WORKDIR}:${WORKDIR}					\
+      -e "CONJUR_LEADER_HOSTNAME=$CONJUR_LEADER_HOSTNAME"		\
+      -e "CONJUR_ACCOUNT=$CONJUR_ACCOUNT"				\
+      -e "CONJUR_APPLIANCE_URL=$CONJUR_APPLIANCE_URL"			\
+      -e "CONJUR_AUTHN_LOGIN=admin"					\
+      -e "CONJUR_AUTHN_API_KEY=$CONJUR_AUTHN_API_KEY"			\
+      -e "CONJUR_CERT_FILE=$WORKDIR/conjur-cert.pem"			\
+      -e "TERM=xterm" 							\
+      --volume $CLOUDBEES_DEMO_VOLUME:$CLOUDBEES_JENKINS_HOME		\
+      -p "50000:8080"							\
+      --restart always 							\
+      --entrypoint "sh" 						\
+      $CLOUDBEES_DEMO_IMAGE						\
+      -c "sleep infinity"
+
+
+    $DOCKER exec $CLOUDBEES_DEMO_CONTAINER 	\
+	service jenkins start
+    echo "Waiting for Jenkins to start up..."
+    sleep 15
+						# shell for keytool must be interactive
+    $DOCKER exec -it $CLOUDBEES_DEMO_CONTAINER	\
+	keytool -importcert -alias conjur -keystore $KEYSTORE -file $WORKDIR/conjur-cert.pem
+  fi
+  echo
+  echo -n "Initial Jenkins admin password: "
+  echo $($DOCKER exec $CLOUDBEES_DEMO_CONTAINER \
+		cat /var/lib/jenkins/secrets/initialAdminPassword)
+  echo
+}
+
+########################################
+init_conjur() {
+  $DOCKER exec $CLOUDBEES_DEMO_CONTAINER \
+	cybr conjur logon-non-interactive
+  $DOCKER exec $CLOUDBEES_DEMO_CONTAINER \
+  	cybr conjur append-policy -b root -f ./policy.yml
+  JENKINS_HOST_API_KEY=$($DOCKER exec $CLOUDBEES_DEMO_CONTAINER \
+				cybr conjur rotate-api-key -l host/$JENKINS_HOSTNAME)
+  echo "JENKINS_HOST_API_KEY:" $JENKINS_HOST_API_KEY
+}
+
+main "$@"
