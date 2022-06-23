@@ -23,10 +23,10 @@
       annotations:
           description: JWT Authenticator bases authentication on the JWT issuer. This variable is optional, and is relevant only if there is an iss claim in the JWT. The issuer variable and iss claim values must match.
 
-    - !variable
-      id: enforced-claims
-      annotations:
-          description: Comma-separated list of claim names that Conjur hosts must include in their annotations in order to be authenticated to this endpoint.
+    #- !variable
+    #  id: enforced-claims
+    #  annotations:
+    #      description: Comma-separated list of claim names that Conjur hosts must include in their annotations in order to be authenticated to this endpoint.
  
     #- !variable
     #  id: mapping-claims

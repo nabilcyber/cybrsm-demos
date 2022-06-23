@@ -1,0 +1,357 @@
+2022-06-14 15:56:41.639+0000 [id=35]	INFO	jenkins.InitReactorRunner$1#onAttained: Prepared all plugins
+2022-06-14 15:56:43.139+0000 [id=36]	INFO	jenkins.InitReactorRunner$1#onAttained: Started all plugins
+2022-06-14 15:56:43.148+0000 [id=35]	INFO	jenkins.InitReactorRunner$1#onAttained: Augmented all extensions
+2022-06-14 15:56:43.294+0000 [id=38]	INFO	c.c.o.c.c.ConfigurationSnippetRefresher#<init>: ConfigurationSnippetRefresher configured with recurrence period of 60,000ms
+2022-06-14 15:56:43.305+0000 [id=37]	INFO	jenkins.InitReactorRunner$1#onAttained: System config loaded
+2022-06-14 15:56:43.305+0000 [id=37]	INFO	jenkins.InitReactorRunner$1#onAttained: System config adapted
+2022-06-14 15:56:43.394+0000 [id=37]	INFO	jenkins.InitReactorRunner$1#onAttained: Loaded all jobs
+2022-06-14 15:56:43.401+0000 [id=36]	INFO	c.c.j.p.a.CloudBeesAssurance#checkInstalledExtension: Checking the validity of the Plugin Catalog
+2022-06-14 15:56:43.408+0000 [id=35]	INFO	n.p.r.g.ProxyGroupContainersMigrator#migrateProxyGroupContainers: Starting migration of the groups configured in items, to store them in independent files.
+This can take a while. Please do not interrupt.
+2022-06-14 15:56:43.778+0000 [id=36]	INFO	c.c.j.p.a.CloudBeesAssurance#checkInstalledExtension: No Plugin Catalog installed
+2022-06-14 15:56:43.813+0000 [id=53]	INFO	c.c.j.p.a.m.UpdateSiteDataProvider$Value#get: Beekeeper is parsing UpdateSite jenkins-enterprise
+2022-06-14 15:56:43.822+0000 [id=35]	INFO	c.c.h.p.f.p.FolderProxyGroupContainer$FolderProxyGroupContainersMigratorImpl#doMigration: Starting migration of groups in Folders
+2022-06-14 15:56:43.823+0000 [id=38]	INFO	c.c.o.context.Messaging$Local#openStore: Starting Messaging
+2022-06-14 15:56:43.834+0000 [id=35]	INFO	c.c.h.p.f.p.FolderProxyGroupContainer$FolderProxyGroupContainersMigratorImpl#doMigration: Finished migration of groups in Folders
+2022-06-14 15:56:43.840+0000 [id=35]	INFO	n.p.r.g.JobProxyGroupContainer$JobProxyGroupContainerMigrator#doMigration: Starting migration of groups in Jobs
+2022-06-14 15:56:43.840+0000 [id=35]	INFO	n.p.r.g.JobProxyGroupContainer$JobProxyGroupContainerMigrator#doMigration: Finished migration of groups in Jobs
+2022-06-14 15:56:43.848+0000 [id=35]	INFO	n.p.r.g.NodeProxyGroupContainer$NodeProxyGroupContainerMigrator#doMigration: Starting migration of groups in Nodes
+2022-06-14 15:56:43.849+0000 [id=35]	INFO	n.p.r.g.NodeProxyGroupContainer$NodeProxyGroupContainerMigrator#doMigration: Finished migration of groups in Nodes
+2022-06-14 15:56:43.849+0000 [id=35]	INFO	n.p.r.g.ProxyGroupContainersMigrator#migrateProxyGroupContainers: Migration finished successfully
+2022-06-14 15:56:43.849+0000 [id=35]	INFO	n.p.r.g.ProxyGroupContainersMigrator#migrateGroupsMemberAmbiguity: Starting automatic migration of groups' member to erase ambiguity.
+2022-06-14 15:56:43.850+0000 [id=35]	INFO	n.p.r.g.ProxyGroupContainersMigrator#migrateGroupsMemberAmbiguity: Starting groups' members migration for FolderProxyGroupContainersMigratorImpl
+2022-06-14 15:56:43.850+0000 [id=35]	INFO	n.p.r.g.ProxyGroupContainersMigrator#migrateGroupsMemberAmbiguity: Groups' members migration for FolderProxyGroupContainersMigratorImpl has finished
+2022-06-14 15:56:43.850+0000 [id=35]	INFO	n.p.r.g.ProxyGroupContainersMigrator#migrateGroupsMemberAmbiguity: Starting groups' members migration for JobProxyGroupContainerMigrator
+2022-06-14 15:56:43.863+0000 [id=35]	INFO	n.p.r.g.ProxyGroupContainersMigrator#migrateGroupsMemberAmbiguity: Groups' members migration for JobProxyGroupContainerMigrator has finished
+2022-06-14 15:56:43.863+0000 [id=35]	INFO	n.p.r.g.ProxyGroupContainersMigrator#migrateGroupsMemberAmbiguity: Starting groups' members migration for NodeProxyGroupContainerMigrator
+2022-06-14 15:56:43.870+0000 [id=35]	INFO	n.p.r.g.ProxyGroupContainersMigrator#migrateGroupsMemberAmbiguity: Groups' members migration for NodeProxyGroupContainerMigrator has finished
+2022-06-14 15:56:43.871+0000 [id=35]	INFO	n.p.r.g.ProxyGroupContainersMigrator#migrateGroupsMemberAmbiguity: Starting groups' members migration for JenkinsProxyGroupContainerMigrator
+2022-06-14 15:56:43.886+0000 [id=35]	INFO	n.p.r.g.ProxyGroupContainersMigrator#migrateGroupsMemberAmbiguity: Groups' members migration for JenkinsProxyGroupContainerMigrator has finished
+2022-06-14 15:56:43.888+0000 [id=35]	INFO	n.p.r.g.ProxyGroupContainersMigrator#migrateGroupsMemberAmbiguity: Automatic migration of groups' members to erase ambiguity finished successfully
+2022-06-14 15:56:44.550+0000 [id=35]	INFO	jenkins.InitReactorRunner$1#onAttained: Configuration for all jobs updated
+2022-06-14 15:56:45.171+0000 [id=58]	INFO	hudson.model.AsyncPeriodicWork#lambda$doRun$1: Started Download metadata
+2022-06-14 15:56:45.217+0000 [id=58]	INFO	hudson.util.Retrier#start: Attempt #1 to do the action check updates server
+2022-06-14 15:56:45.886+0000 [id=38]	INFO	jenkins.install.SetupWizard#init: 
+
+*************************************************************
+*************************************************************
+*************************************************************
+
+Jenkins initial setup is required. An admin user has been created and a password generated.
+Please use the following password to proceed to installation:
+
+a8b145b92a444406a95eb989625a779b
+
+This may also be found at: /var/lib/jenkins/secrets/initialAdminPassword
+
+*************************************************************
+*************************************************************
+*************************************************************
+
+2022-06-14 15:56:46.166+0000 [id=58]	INFO	c.c.j.p.l.n.CloudBeesUpdateSite#updateData: Obtained the latest update center data file for UpdateSource cje-offline
+2022-06-14 15:56:46.166+0000 [id=60]	INFO	c.c.j.p.l.n.CloudBeesUpdateSite#updateData: Obtained the latest update center data file for UpdateSource cje-offline
+2022-06-14 15:56:46.180+0000 [id=58]	INFO	hudson.util.Retrier#start: The attempt #1 to do the action check updates server failed with an allowed exception:
+java.nio.file.FileAlreadyExistsException: /var/lib/jenkins/updates
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:88)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.createDirectory(UnixFileSystemProvider.java:384)
+	at java.nio.file.Files.createDirectory(Files.java:674)
+	at hudson.Util.createDirectories(Util.java:1785)
+	at hudson.util.TextFile.write(TextFile.java:100)
+	at com.cloudbees.jenkins.plugins.license.nectar.CloudBeesUpdateSite.updateData(CloudBeesUpdateSite.java:608)
+	at com.cloudbees.jenkins.plugins.license.nectar.CloudBeesUpdateSite.updateDirectlyNow(CloudBeesUpdateSite.java:531)
+	at hudson.model.UpdateSite.updateDirectlyNow(UpdateSite.java:214)
+	at hudson.PluginManager.checkUpdatesServer(PluginManager.java:1962)
+	at hudson.util.Retrier.start(Retrier.java:62)
+	at hudson.PluginManager.doCheckUpdatesServer(PluginManager.java:1933)
+	at jenkins.DailyCheck.execute(DailyCheck.java:93)
+	at hudson.model.AsyncPeriodicWork.lambda$doRun$1(AsyncPeriodicWork.java:102)
+	at java.lang.Thread.run(Thread.java:748)
+2022-06-14 15:56:46.181+0000 [id=58]	INFO	hudson.util.Retrier#start: Calling the listener of the allowed exception '/var/lib/jenkins/updates' at the attempt #1 to do the action check updates server
+2022-06-14 15:56:46.182+0000 [id=58]	INFO	hudson.util.Retrier#start: Attempted the action check updates server for 1 time(s) with no success
+2022-06-14 15:56:46.187+0000 [id=58]	SEVERE	hudson.PluginManager#doCheckUpdatesServer: Error checking update sites for 1 attempt(s). Last exception was: FileAlreadyExistsException: /var/lib/jenkins/updates
+2022-06-14 15:56:46.197+0000 [id=58]	INFO	hudson.model.AsyncPeriodicWork#lambda$doRun$1: Finished Download metadata. 998 ms
+2022-06-14 15:56:46.560+0000 [id=38]	INFO	c.c.j.p.l.n.CloudBeesUpdateSite#updateData: Obtained the latest update center data file for UpdateSource cje-offline
+2022-06-14 15:56:46.796+0000 [id=36]	INFO	jenkins.InitReactorRunner$1#onAttained: Completed initialization
+2022-06-14 15:56:46.857+0000 [id=32]	INFO	hudson.lifecycle.Lifecycle#onReady: Jenkins is fully up and running
+2022-06-14 15:56:46.858+0000 [id=69]	INFO	c.c.j.plugins.license.BootHook#lambda$innerOnLoaded$0: License is required
+2022-06-14 15:56:53.162+0000 [id=53]	INFO	c.c.j.p.a.m.UpdateSiteDataProvider$Value#get: Beekeeper is parsing UpdateSite cje-offline
+2022-06-14 15:56:53.162+0000 [id=53]	INFO	c.c.j.p.a.m.UpdateSiteDataProvider$Value#get: Beekeeper is parsing UpdateSite cap-cje
+2022-06-14 15:57:00.636+0000 [id=60]	INFO	c.c.j.p.l.n.CloudBeesUpdateSite#updateData: Obtained the latest update center data file for UpdateSource cap-cje
+2022-06-14 15:57:01.630+0000 [id=57]	INFO	h.m.DownloadService$Downloadable#load: Obtained the updated data file for hudson.tasks.Maven.MavenInstaller
+2022-06-14 15:57:03.032+0000 [id=57]	INFO	h.m.DownloadService$Downloadable#load: Obtained the updated data file for hudson.tools.JDKInstaller
+2022-06-14 15:57:03.033+0000 [id=53]	INFO	c.c.j.p.a.m.UpdateSiteDataProvider$Value#get: Beekeeper is parsing UpdateSite cap-cje
+2022-06-14 15:58:34.892+0000 [id=14]	INFO	hudson.license.LicenseListener#fireAfterUpdate: firing the license update notification
+2022-06-14 15:58:36.427+0000 [id=139]	INFO	hudson.PluginManager#install: Starting installation of a batch of 31 plugins plus their dependencies
+2022-06-14 15:58:36.430+0000 [id=139]	INFO	hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of credentials-binding for plugin pipeline-model-definition
+2022-06-14 15:58:36.433+0000 [id=139]	INFO	hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of ssh-credentials for plugin credentials-binding
+2022-06-14 15:58:36.436+0000 [id=139]	INFO	hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of plain-credentials for plugin credentials-binding
+2022-06-14 15:58:36.437+0000 [id=139]	INFO	hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of pipeline-model-extensions for plugin pipeline-model-definition
+2022-06-14 15:58:36.438+0000 [id=139]	INFO	hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of workflow-cps for plugin pipeline-model-extensions
+2022-06-14 15:58:36.440+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of ssh-credentials on behalf of admin
+2022-06-14 15:58:36.448+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading ssh-credentials
+2022-06-14 15:58:36.450+0000 [id=139]	INFO	hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of ace-editor for plugin workflow-cps
+2022-06-14 15:58:36.451+0000 [id=139]	INFO	hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of workflow-scm-step for plugin workflow-cps
+2022-06-14 15:58:36.451+0000 [id=139]	INFO	hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of pipeline-stage-step for plugin pipeline-model-extensions
+2022-06-14 15:58:36.452+0000 [id=139]	INFO	hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of pipeline-model-api for plugin pipeline-model-extensions
+2022-06-14 15:58:36.452+0000 [id=139]	INFO	hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of workflow-job for plugin pipeline-model-extensions
+2022-06-14 15:58:36.453+0000 [id=139]	INFO	hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of workflow-cps-global-lib for plugin pipeline-model-definition
+2022-06-14 15:58:36.454+0000 [id=139]	INFO	hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of git-server for plugin workflow-cps-global-lib
+2022-06-14 15:58:36.455+0000 [id=139]	INFO	hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of git-client for plugin git-server
+2022-06-14 15:58:36.456+0000 [id=139]	INFO	hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of jsch for plugin git-client
+2022-06-14 15:58:36.457+0000 [id=139]	INFO	hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of workflow-multibranch for plugin pipeline-model-definition
+2022-06-14 15:58:36.461+0000 [id=139]	INFO	hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of branch-api for plugin workflow-multibranch
+2022-06-14 15:58:36.468+0000 [id=139]	INFO	hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of workflow-durable-task-step for plugin pipeline-model-definition
+2022-06-14 15:58:36.469+0000 [id=139]	INFO	hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of durable-task for plugin workflow-durable-task-step
+2022-06-14 15:58:36.470+0000 [id=139]	INFO	hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of pipeline-stage-tags-metadata for plugin pipeline-model-definition
+2022-06-14 15:58:36.470+0000 [id=139]	INFO	hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of pipeline-input-step for plugin pipeline-model-definition
+2022-06-14 15:58:36.471+0000 [id=139]	INFO	hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of workflow-basic-steps for plugin pipeline-model-definition
+2022-06-14 15:58:36.473+0000 [id=139]	INFO	hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of node-iterator-api for plugin operations-center-cloud
+2022-06-14 15:58:36.478+0000 [id=139]	INFO	hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of aws-credentials for plugin infradna-backup
+2022-06-14 15:58:36.479+0000 [id=139]	INFO	hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of aws-java-sdk-ec2 for plugin aws-credentials
+2022-06-14 15:58:36.479+0000 [id=139]	INFO	hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of aws-java-sdk-minimal for plugin aws-java-sdk-ec2
+2022-06-14 15:58:36.483+0000 [id=139]	INFO	hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of cloudbees-template for plugin cloudbees-groovy-view
+2022-06-14 15:58:36.485+0000 [id=139]	INFO	hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of matrix-project for plugin email-ext
+2022-06-14 15:58:36.489+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: ssh-credentials
+2022-06-14 15:58:36.490+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of plain-credentials on behalf of admin
+2022-06-14 15:58:36.492+0000 [id=139]	INFO	hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of git for plugin cloudbees-workflow-template
+2022-06-14 15:58:36.500+0000 [id=139]	INFO	hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of pipeline-stage-view for plugin cloudbees-workflow-ui
+2022-06-14 15:58:36.501+0000 [id=139]	INFO	hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of pipeline-rest-api for plugin pipeline-stage-view
+2022-06-14 15:58:36.501+0000 [id=139]	INFO	hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of pipeline-graph-analysis for plugin pipeline-rest-api
+2022-06-14 15:58:36.501+0000 [id=139]	INFO	hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of handlebars for plugin pipeline-stage-view
+2022-06-14 15:58:36.502+0000 [id=139]	INFO	hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of momentjs for plugin pipeline-stage-view
+2022-06-14 15:58:36.502+0000 [id=139]	INFO	hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of pipeline-milestone-step for plugin workflow-aggregator
+2022-06-14 15:58:36.503+0000 [id=139]	INFO	hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of pipeline-build-step for plugin workflow-aggregator
+2022-06-14 15:58:36.492+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading plain-credentials
+2022-06-14 15:58:36.513+0000 [id=139]	INFO	hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of github-api for plugin github-branch-source
+2022-06-14 15:58:36.513+0000 [id=139]	INFO	hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of github for plugin github-branch-source
+2022-06-14 15:58:36.524+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: plain-credentials
+2022-06-14 15:58:36.524+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of credentials-binding on behalf of admin
+2022-06-14 15:58:36.525+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading credentials-binding
+2022-06-14 15:58:36.565+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: credentials-binding
+2022-06-14 15:58:36.566+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of ace-editor on behalf of admin
+2022-06-14 15:58:36.582+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading ace-editor
+2022-06-14 15:58:37.473+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: ace-editor
+2022-06-14 15:58:37.473+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of workflow-scm-step on behalf of admin
+2022-06-14 15:58:37.473+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading workflow-scm-step
+2022-06-14 15:58:37.487+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: workflow-scm-step
+2022-06-14 15:58:37.488+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of workflow-cps on behalf of admin
+2022-06-14 15:58:37.489+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading workflow-cps
+2022-06-14 15:58:37.550+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: workflow-cps
+2022-06-14 15:58:37.550+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of pipeline-stage-step on behalf of admin
+2022-06-14 15:58:37.550+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading pipeline-stage-step
+2022-06-14 15:58:37.564+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: pipeline-stage-step
+2022-06-14 15:58:37.564+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of pipeline-model-api on behalf of admin
+2022-06-14 15:58:37.565+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading pipeline-model-api
+2022-06-14 15:58:37.786+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: pipeline-model-api
+2022-06-14 15:58:37.786+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of workflow-job on behalf of admin
+2022-06-14 15:58:37.788+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading workflow-job
+2022-06-14 15:58:37.810+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: workflow-job
+2022-06-14 15:58:37.811+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of pipeline-model-extensions on behalf of admin
+2022-06-14 15:58:37.813+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading pipeline-model-extensions
+2022-06-14 15:58:37.832+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: pipeline-model-extensions
+2022-06-14 15:58:37.832+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of jsch on behalf of admin
+2022-06-14 15:58:37.833+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading jsch
+2022-06-14 15:58:37.860+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: jsch
+2022-06-14 15:58:37.860+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of git-client on behalf of admin
+2022-06-14 15:58:37.861+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading git-client
+2022-06-14 15:58:38.085+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: git-client
+2022-06-14 15:58:38.085+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of git-server on behalf of admin
+2022-06-14 15:58:38.086+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading git-server
+2022-06-14 15:58:38.105+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: git-server
+2022-06-14 15:58:38.105+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of workflow-cps-global-lib on behalf of admin
+2022-06-14 15:58:38.106+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading workflow-cps-global-lib
+2022-06-14 15:58:38.218+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: workflow-cps-global-lib
+2022-06-14 15:58:38.218+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of branch-api on behalf of admin
+2022-06-14 15:58:38.219+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading branch-api
+2022-06-14 15:58:38.260+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: branch-api
+2022-06-14 15:58:38.260+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of workflow-multibranch on behalf of admin
+2022-06-14 15:58:38.261+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading workflow-multibranch
+2022-06-14 15:58:38.277+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: workflow-multibranch
+2022-06-14 15:58:38.278+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of durable-task on behalf of admin
+2022-06-14 15:58:38.278+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading durable-task
+2022-06-14 15:58:38.772+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: durable-task
+2022-06-14 15:58:38.772+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of workflow-durable-task-step on behalf of admin
+2022-06-14 15:58:38.773+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading workflow-durable-task-step
+2022-06-14 15:58:38.789+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: workflow-durable-task-step
+2022-06-14 15:58:38.790+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of pipeline-stage-tags-metadata on behalf of admin
+2022-06-14 15:58:38.790+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading pipeline-stage-tags-metadata
+2022-06-14 15:58:38.803+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: pipeline-stage-tags-metadata
+2022-06-14 15:58:38.803+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of pipeline-input-step on behalf of admin
+2022-06-14 15:58:38.803+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading pipeline-input-step
+2022-06-14 15:58:38.838+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: pipeline-input-step
+2022-06-14 15:58:38.838+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of workflow-basic-steps on behalf of admin
+2022-06-14 15:58:38.839+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading workflow-basic-steps
+2022-06-14 15:58:38.863+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: workflow-basic-steps
+2022-06-14 15:58:38.863+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of pipeline-model-definition on behalf of admin
+2022-06-14 15:58:38.863+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading pipeline-model-definition
+2022-06-14 15:58:38.957+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: pipeline-model-definition
+2022-06-14 15:58:38.957+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of cloudbees-nodes-plus on behalf of admin
+2022-06-14 15:58:38.958+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading cloudbees-nodes-plus
+2022-06-14 15:58:38.971+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: cloudbees-nodes-plus
+2022-06-14 15:58:38.971+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of cloudbees-ssh-slaves on behalf of admin
+2022-06-14 15:58:38.972+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading cloudbees-ssh-slaves
+2022-06-14 15:58:39.022+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: cloudbees-ssh-slaves
+2022-06-14 15:58:39.023+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of gradle on behalf of admin
+2022-06-14 15:58:39.023+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading gradle
+2022-06-14 15:58:39.043+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: gradle
+2022-06-14 15:58:39.043+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of node-iterator-api on behalf of admin
+2022-06-14 15:58:39.049+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading node-iterator-api
+2022-06-14 15:58:39.063+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: node-iterator-api
+2022-06-14 15:58:39.064+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of operations-center-cloud on behalf of admin
+2022-06-14 15:58:39.064+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading operations-center-cloud
+2022-06-14 15:58:39.088+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: operations-center-cloud
+2022-06-14 15:58:39.088+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of aws-java-sdk-minimal on behalf of admin
+2022-06-14 15:58:39.089+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading aws-java-sdk-minimal
+2022-06-14 15:58:39.340+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: aws-java-sdk-minimal
+2022-06-14 15:58:39.340+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of aws-java-sdk-ec2 on behalf of admin
+2022-06-14 15:58:39.341+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading aws-java-sdk-ec2
+2022-06-14 15:58:39.799+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: aws-java-sdk-ec2
+2022-06-14 15:58:39.799+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of aws-credentials on behalf of admin
+2022-06-14 15:58:39.800+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading aws-credentials
+2022-06-14 15:58:39.812+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: aws-credentials
+2022-06-14 15:58:39.813+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of infradna-backup on behalf of admin
+2022-06-14 15:58:39.813+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading infradna-backup
+2022-06-14 15:58:40.011+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: infradna-backup
+2022-06-14 15:58:40.012+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of cloudbees-ha on behalf of admin
+2022-06-14 15:58:40.015+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading cloudbees-ha
+2022-06-14 15:58:40.027+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: cloudbees-ha
+2022-06-14 15:58:40.027+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of cloudbees-support on behalf of admin
+2022-06-14 15:58:40.028+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading cloudbees-support
+2022-06-14 15:58:40.045+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: cloudbees-support
+2022-06-14 15:58:40.046+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of cloudbees-monitoring on behalf of admin
+2022-06-14 15:58:40.046+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading cloudbees-monitoring
+2022-06-14 15:58:40.097+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: cloudbees-monitoring
+2022-06-14 15:58:40.097+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of cloudbees-template on behalf of admin
+2022-06-14 15:58:40.097+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading cloudbees-template
+2022-06-14 15:58:40.133+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: cloudbees-template
+2022-06-14 15:58:40.134+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of cloudbees-groovy-view on behalf of admin
+2022-06-14 15:58:40.135+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading cloudbees-groovy-view
+2022-06-14 15:58:40.158+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: cloudbees-groovy-view
+2022-06-14 15:58:40.158+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of cloudbees-view-creation-filter on behalf of admin
+2022-06-14 15:58:40.159+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading cloudbees-view-creation-filter
+2022-06-14 15:58:40.176+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: cloudbees-view-creation-filter
+2022-06-14 15:58:40.177+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of cloudbees-jsync-archiver on behalf of admin
+2022-06-14 15:58:40.179+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading cloudbees-jsync-archiver
+2022-06-14 15:58:40.351+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: cloudbees-jsync-archiver
+2022-06-14 15:58:40.351+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of cloudbees-template on behalf of admin
+2022-06-14 15:58:40.352+0000 [id=171]	INFO	h.m.UpdateCenter$InstallationJob#_run: Skipping duplicate install of: CloudBees Template Plugin@4.54
+2022-06-14 15:58:40.352+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: cloudbees-template
+2022-06-14 15:58:40.352+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of matrix-project on behalf of admin
+2022-06-14 15:58:40.352+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading matrix-project
+2022-06-14 15:58:40.393+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: matrix-project
+2022-06-14 15:58:40.393+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of email-ext on behalf of admin
+2022-06-14 15:58:40.393+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading email-ext
+2022-06-14 15:58:40.512+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: email-ext
+2022-06-14 15:58:40.512+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of git on behalf of admin
+2022-06-14 15:58:40.512+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading git
+2022-06-14 15:58:40.585+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: git
+2022-06-14 15:58:40.585+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of cloudbees-workflow-template on behalf of admin
+2022-06-14 15:58:40.585+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading cloudbees-workflow-template
+2022-06-14 15:58:40.627+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: cloudbees-workflow-template
+2022-06-14 15:58:40.627+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of workflow-cps-checkpoint on behalf of admin
+2022-06-14 15:58:40.629+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading workflow-cps-checkpoint
+2022-06-14 15:58:40.644+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: workflow-cps-checkpoint
+2022-06-14 15:58:40.645+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of pipeline-graph-analysis on behalf of admin
+2022-06-14 15:58:40.645+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading pipeline-graph-analysis
+2022-06-14 15:58:40.666+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: pipeline-graph-analysis
+2022-06-14 15:58:40.666+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of pipeline-rest-api on behalf of admin
+2022-06-14 15:58:40.667+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading pipeline-rest-api
+2022-06-14 15:58:40.686+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: pipeline-rest-api
+2022-06-14 15:58:40.687+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of handlebars on behalf of admin
+2022-06-14 15:58:40.687+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading handlebars
+2022-06-14 15:58:40.707+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: handlebars
+2022-06-14 15:58:40.708+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of momentjs on behalf of admin
+2022-06-14 15:58:40.709+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading momentjs
+2022-06-14 15:58:40.724+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: momentjs
+2022-06-14 15:58:40.725+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of pipeline-stage-view on behalf of admin
+2022-06-14 15:58:40.725+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading pipeline-stage-view
+2022-06-14 15:58:40.764+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: pipeline-stage-view
+2022-06-14 15:58:40.764+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of cloudbees-workflow-ui on behalf of admin
+2022-06-14 15:58:40.764+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading cloudbees-workflow-ui
+2022-06-14 15:58:40.775+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: cloudbees-workflow-ui
+2022-06-14 15:58:40.776+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of pipeline-milestone-step on behalf of admin
+2022-06-14 15:58:40.776+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading pipeline-milestone-step
+2022-06-14 15:58:40.787+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: pipeline-milestone-step
+2022-06-14 15:58:40.787+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of pipeline-build-step on behalf of admin
+2022-06-14 15:58:40.788+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading pipeline-build-step
+2022-06-14 15:58:40.801+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: pipeline-build-step
+2022-06-14 15:58:40.801+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of workflow-aggregator on behalf of admin
+2022-06-14 15:58:40.802+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading workflow-aggregator
+2022-06-14 15:58:40.811+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: workflow-aggregator
+2022-06-14 15:58:40.811+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of pipeline-stage-view on behalf of admin
+2022-06-14 15:58:40.812+0000 [id=171]	INFO	h.m.UpdateCenter$InstallationJob#_run: Skipping duplicate install of: Pipeline: Stage View Plugin@2.23
+2022-06-14 15:58:40.812+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: pipeline-stage-view
+2022-06-14 15:58:40.812+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of ldap on behalf of admin
+2022-06-14 15:58:40.812+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading ldap
+2022-06-14 15:58:41.036+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: ldap
+2022-06-14 15:58:41.037+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of credentials-binding on behalf of admin
+2022-06-14 15:58:41.037+0000 [id=171]	INFO	h.m.UpdateCenter$InstallationJob#_run: Skipping duplicate install of: Credentials Binding Plugin@1.27.1
+2022-06-14 15:58:41.038+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: credentials-binding
+2022-06-14 15:58:41.038+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of git on behalf of admin
+2022-06-14 15:58:41.041+0000 [id=171]	INFO	h.m.UpdateCenter$InstallationJob#_run: Skipping duplicate install of: Git plugin@4.11.2
+2022-06-14 15:58:41.041+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: git
+2022-06-14 15:58:41.041+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of git-client on behalf of admin
+2022-06-14 15:58:41.041+0000 [id=171]	INFO	h.m.UpdateCenter$InstallationJob#_run: Skipping duplicate install of: Git client plugin@3.11.0
+2022-06-14 15:58:41.041+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: git-client
+2022-06-14 15:58:41.041+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of github-api on behalf of admin
+2022-06-14 15:58:41.042+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading github-api
+2022-06-14 15:58:41.131+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: github-api
+2022-06-14 15:58:41.131+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of github on behalf of admin
+2022-06-14 15:58:41.132+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading github
+2022-06-14 15:58:41.206+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: github
+2022-06-14 15:58:41.206+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of github-branch-source on behalf of admin
+2022-06-14 15:58:41.206+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading github-branch-source
+2022-06-14 15:58:41.240+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: github-branch-source
+2022-06-14 15:58:41.240+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of cloudbees-github-reporting on behalf of admin
+2022-06-14 15:58:41.240+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading cloudbees-github-reporting
+2022-06-14 15:58:41.263+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: cloudbees-github-reporting
+2022-06-14 15:58:41.263+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of cloudbees-jenkins-advisor on behalf of admin
+2022-06-14 15:58:41.264+0000 [id=171]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading cloudbees-jenkins-advisor
+2022-06-14 15:58:41.284+0000 [id=171]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: cloudbees-jenkins-advisor
+2022-06-14 15:58:41.284+0000 [id=171]	WARNING	h.m.UpdateCenter$ConnectionCheckJob#run: Update site 'cap-cje' does not declare the connection check URL. Skipping the network availability check.
+2022-06-14 15:58:41.623+0000 [id=171]	INFO	h.m.UpdateCenter$CompleteBatchJob#run: Completing installing of plugin batch…
+2022-06-14 15:58:41.625+0000 [id=171]	INFO	hudson.ClassicPluginStrategy#updateDependency: Updated dependency of operations-center-context
+2022-06-14 15:58:41.629+0000 [id=171]	INFO	hudson.ClassicPluginStrategy#updateDependency: Updated dependency of cloudbees-analytics
+2022-06-14 15:58:41.629+0000 [id=171]	INFO	hudson.ClassicPluginStrategy#updateDependency: Updated dependency of operations-center-client
+2022-06-14 15:58:41.629+0000 [id=171]	INFO	hudson.ClassicPluginStrategy#updateDependency: Updated dependency of token-macro
+2022-06-14 15:58:46.697+0000 [id=171]	INFO	h.m.DownloadService$Downloadable#load: Obtained the updated data file for hudson.plugins.gradle.GradleInstaller
+2022-06-14 15:58:48.235+0000 [id=183]	INFO	jenkins.InitReactorRunner$1#onAttained: Started initialization
+2022-06-14 15:58:48.253+0000 [id=185]	INFO	jenkins.InitReactorRunner$1#onAttained: Listed all plugins
+2022-06-14 15:58:48.255+0000 [id=185]	INFO	jenkins.InitReactorRunner$1#onAttained: Prepared all plugins
+2022-06-14 15:58:48.279+0000 [id=183]	INFO	jenkins.InitReactorRunner$1#onAttained: Started all plugins
+2022-06-14 15:58:48.308+0000 [id=184]	INFO	jenkins.InitReactorRunner$1#onAttained: Augmented all extensions
+2022-06-14 15:58:48.392+0000 [id=184]	INFO	jenkins.InitReactorRunner$1#onAttained: System config loaded
+2022-06-14 15:58:48.394+0000 [id=184]	INFO	jenkins.InitReactorRunner$1#onAttained: System config adapted
+2022-06-14 15:58:48.759+0000 [id=186]	INFO	jenkins.InitReactorRunner$1#onAttained: Loaded all jobs
+2022-06-14 15:58:48.768+0000 [id=183]	INFO	jenkins.InitReactorRunner$1#onAttained: Configuration for all jobs updated
+2022-06-14 15:58:49.271+0000 [id=183]	INFO	jenkins.InitReactorRunner$1#onAttained: Completed initialization
+2022-06-14 15:58:49.273+0000 [id=171]	INFO	h.m.UpdateCenter$CompleteBatchJob#run: Completed installation of 58 plugins in 12 sec
+2022-06-14 15:59:25.496+0000 [id=14]	INFO	hudson.PluginManager#install: Starting installation of a batch of 1 plugins plus their dependencies
+2022-06-14 15:59:25.502+0000 [id=223]	INFO	h.model.UpdateCenter$DownloadJob#run: Starting the installation of conjur-credentials on behalf of admin
+2022-06-14 15:59:25.820+0000 [id=223]	INFO	h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading conjur-credentials
+2022-06-14 15:59:31.663+0000 [id=223]	INFO	h.model.UpdateCenter$DownloadJob#run: Installation successful: conjur-credentials
+2022-06-14 15:59:31.663+0000 [id=223]	INFO	h.m.UpdateCenter$CompleteBatchJob#run: Completing installing of plugin batch…
+2022-06-14 15:59:32.062+0000 [id=232]	INFO	jenkins.InitReactorRunner$1#onAttained: Started initialization
+2022-06-14 15:59:32.064+0000 [id=234]	INFO	jenkins.InitReactorRunner$1#onAttained: Listed all plugins
+2022-06-14 15:59:32.064+0000 [id=234]	INFO	jenkins.InitReactorRunner$1#onAttained: Prepared all plugins
+2022-06-14 15:59:32.064+0000 [id=234]	INFO	jenkins.InitReactorRunner$1#onAttained: Started all plugins
+2022-06-14 15:59:32.065+0000 [id=234]	INFO	jenkins.InitReactorRunner$1#onAttained: Augmented all extensions
+2022-06-14 15:59:32.066+0000 [id=234]	INFO	jenkins.InitReactorRunner$1#onAttained: System config loaded
+2022-06-14 15:59:32.066+0000 [id=234]	INFO	jenkins.InitReactorRunner$1#onAttained: System config adapted
+2022-06-14 15:59:32.066+0000 [id=234]	INFO	jenkins.InitReactorRunner$1#onAttained: Loaded all jobs
+2022-06-14 15:59:32.067+0000 [id=234]	INFO	jenkins.InitReactorRunner$1#onAttained: Configuration for all jobs updated
+2022-06-14 15:59:32.067+0000 [id=234]	INFO	jenkins.InitReactorRunner$1#onAttained: Completed initialization
+2022-06-14 15:59:32.069+0000 [id=223]	INFO	h.m.UpdateCenter$CompleteBatchJob#run: Completed installation of 1 plugins in 6.5 sec
+2022-06-14 15:59:45.535+0000 [id=246]	INFO	c.c.o.c.p.OperationsCenterSupportComponent#addContents: Connection to CloudBees CI Operation Center is not set. Either there is a configuration issue or the operations-center-client plugin can be uninstalled from this instance.
+2022-06-14 16:01:45.163+0000 [id=355]	INFO	hudson.model.AsyncPeriodicWork#lambda$doRun$1: Started user-activity-monitoring-cleanup
+2022-06-14 16:01:45.168+0000 [id=355]	INFO	hudson.model.AsyncPeriodicWork#lambda$doRun$1: Finished user-activity-monitoring-cleanup. 4 ms
+2022-06-14 16:06:48.181+0000 [id=138]	INFO	c.c.a.g.utils.CloudProviderUtils#detectSpecificProvider: Exception thrown when trying to check if the cloud provider is AWS: connect timed out
+2022-06-14 16:06:51.186+0000 [id=138]	INFO	c.c.a.g.utils.CloudProviderUtils#detectSpecificProvider: Exception thrown when trying to check if the cloud provider is Azure: connect timed out
+2022-06-14 16:28:48.126+0000 [id=1724]	INFO	hudson.model.AsyncPeriodicWork#lambda$doRun$1: Started Bundle Upload
+2022-06-14 16:28:48.127+0000 [id=1724]	INFO	c.c.j.p.advisor.BundleUpload#log: Invalid configuration. Skipping bundle upload.
+2022-06-14 16:28:48.133+0000 [id=1724]	INFO	hudson.model.AsyncPeriodicWork#lambda$doRun$1: Finished Bundle Upload. 6 ms
+2022-06-14 16:43:54.746+0000 [id=2472]	INFO	hudson.model.AsyncPeriodicWork#lambda$doRun$1: Started Periodic background build discarder
+2022-06-14 16:43:54.749+0000 [id=2472]	INFO	hudson.model.AsyncPeriodicWork#lambda$doRun$1: Finished Periodic background build discarder. 2 ms
+2022-06-14 17:00:00.368+0000 [id=3288]	INFO	c.c.o.c.p.OperationsCenterSupportComponent#addContents: Connection to CloudBees CI Operation Center is not set. Either there is a configuration issue or the operations-center-client plugin can be uninstalled from this instance.

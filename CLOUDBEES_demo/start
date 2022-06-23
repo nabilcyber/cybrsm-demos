@@ -6,7 +6,7 @@ main() {
   if [[ "$1" == "del" ]]; then
     delete_jenkins
   fi
-  build_jenkins
+#  build_jenkins
   start_jenkins
   init_conjur
 }
@@ -18,8 +18,34 @@ delete_jenkins() {
     fi
     $DOCKER exec $CLOUDBEES_DEMO_CONTAINER \
 	service jenkins stop
-				# execute backup of jenkins state in container,
-				# writes backup file to host disk via WORKDIR mount
+
+#    save_jenkins_state
+
+    echo "Stopping and removing container..."
+    $DOCKER stop $CLOUDBEES_DEMO_CONTAINER
+    $DOCKER rm $CLOUDBEES_DEMO_CONTAINER
+    exit 0
+}
+
+########################################
+build_jenkins() {
+  pushd build
+    ./build.sh
+  popd
+}
+
+########################################
+create_volume() {
+			# create volume for persistence of state across container instances
+  if [[ "$($DOCKER volume ls | grep $CLOUDBEES_DEMO_VOLUME)" == "" ]]; then
+    $DOCKER volume create $CLOUDBEES_DEMO_VOLUME 
+  fi
+}
+
+########################################
+save_jenkins_state() {
+				# tar jenkins home dir state in container,
+				# writes tarfile to host disk via WORKDIR mount
     echo "Making backup of Jenkins state to ${PWD}/backup.tar.z..."
     $DOCKER exec $CLOUDBEES_DEMO_CONTAINER \
 	tar czf backup.tar.z 			\
@@ -36,32 +62,37 @@ delete_jenkins() {
 	  $CLOUDBEES_JENKINS_HOME/cb-envelope		\
 	  $CLOUDBEES_JENKINS_HOME/queue.xml.bak		\
 	  $CLOUDBEES_JENKINS_HOME/secrets
-
-    echo "Stopping and removing container..."
-    $DOCKER stop $CLOUDBEES_DEMO_CONTAINER
-    $DOCKER rm $CLOUDBEES_DEMO_CONTAINER
-    exit 0
 }
 
 ########################################
-build_jenkins() {
-  pushd build
-    ./build.sh
-  popd
+restore_jenkins_state() {
+  if test -e ${PWD}${WORKDIR}/backup.tar.z ; then
+    $DOCKER exec $CLOUDBEES_DEMO_CONTAINER bash -c "cd /; tar xvf $WORKDIR/backup.tar.z"
+  fi
+}
+
+########################################
+create_volume() {
+  if [[ "$($DOCKER volume ls | grep $CLOUDBEES_DEMO_VOLUME)" == "" ]]; then
+    $DOCKER volume create 	\
+	--opt size=300m		\
+	 $CLOUDBEES_DEMO_VOLUME 
+  fi
 }
 
 ########################################
 start_jenkins() {
+
+  create_volume		# create volume for persistence of state across container instances
+
   # WORKDIR is assumed to be a subdirectory of current directory.
   # It is mounted at the mountpount w/ same name in container.
   if [[ "$($DOCKER ps | grep $CLOUDBEES_DEMO_CONTAINER)" == "" ]]; then
-#    $DOCKER volume create $CLOUDBEES_DEMO_VOLUME	# for persistence of state across container instances
     cp $LEADER_CERT_FILE .$WORKDIR/conjur-cert.pem
     $DOCKER run -d 							\
       --hostname cbjenkins						\
       --name $CLOUDBEES_DEMO_CONTAINER 					\
       --add-host "$CONJUR_LEADER_HOSTNAME:$CONJUR_LEADER_HOST_IP"	\
-      -v ${PWD}${WORKDIR}:${WORKDIR}					\
       -e "CONJUR_LEADER_HOSTNAME=$CONJUR_LEADER_HOSTNAME"		\
       -e "CONJUR_ACCOUNT=$CONJUR_ACCOUNT"				\
       -e "CONJUR_APPLIANCE_URL=$CONJUR_APPLIANCE_URL"			\
@@ -69,22 +100,27 @@ start_jenkins() {
       -e "CONJUR_AUTHN_API_KEY=$CONJUR_AUTHN_API_KEY"			\
       -e "CONJUR_CERT_FILE=$WORKDIR/conjur-cert.pem"			\
       -e "TERM=xterm" 							\
-      --volume $CLOUDBEES_DEMO_VOLUME:$CLOUDBEES_JENKINS_HOME		\
       -p "50000:8080"							\
+      --mount "type=bind,src=${PWD}${WORKDIR},dst=${WORKDIR}"		\
+      --mount "src=$CLOUDBEES_DEMO_VOLUME,dst=$CLOUDBEES_JENKINS_HOME"	\
       --restart always 							\
       --entrypoint "sh" 						\
       $CLOUDBEES_DEMO_IMAGE						\
       -c "sleep infinity"
 
+#    restore_jenkins_state
 
     $DOCKER exec $CLOUDBEES_DEMO_CONTAINER 	\
 	service jenkins start
-    echo "Waiting for Jenkins to start up..."
-    sleep 15
 						# shell for keytool must be interactive
     $DOCKER exec -it $CLOUDBEES_DEMO_CONTAINER	\
 	keytool -importcert -alias conjur -keystore $KEYSTORE -file $WORKDIR/conjur-cert.pem
+
+    rm $WORKDIR/demo.out
+    chmod a+w $WORKDIR/demo.out
   fi
+  echo "Waiting for Jenkins to start up..."
+  sleep 20 
   echo
   echo -n "Initial Jenkins admin password: "
   echo $($DOCKER exec $CLOUDBEES_DEMO_CONTAINER \

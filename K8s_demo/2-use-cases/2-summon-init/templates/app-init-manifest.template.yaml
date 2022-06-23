@@ -117,13 +117,13 @@ spec:
                 name: dap-config
                 key: CONJUR_FOLLOWER_CERTIFICATE
 
-        resources:
-          requests:
-            cpu: "50m"
-            memory: "16Mi"
-          limits:
-            cpu: "50m"
-            memory: "16Mi"
+#        resources:
+#          requests:
+#            cpu: "50m"
+#            memory: "16Mi"
+#          limits:
+#            cpu: "50m"
+#            memory: "16Mi"
         volumeMounts:
           - mountPath: /run/conjur
             name: conjur-access-token

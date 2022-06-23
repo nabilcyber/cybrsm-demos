@@ -20,6 +20,6 @@ $CONJUR_HOME/bin/enable_all_configured_authenticators.sh
 
 conjur_set_variable conjur/authn-jwt/$SERVICE_ID/issuer $JWT_ISSUER
 conjur_set_variable conjur/authn-jwt/$SERVICE_ID/jwks-uri  $JWKS_URI
-conjur_set_variable conjur/authn-jwt/$SERVICE_ID/enforced-claims $ENFORCED_CLAIMS
 conjur_set_variable conjur/authn-jwt/$SERVICE_ID/token-app-property $TOKEN_APP_PROPERTY
 conjur_set_variable conjur/authn-jwt/$SERVICE_ID/identity-path $IDENTITY_PATH
+#conjur_set_variable conjur/authn-jwt/$SERVICE_ID/enforced-claims $ENFORCED_CLAIMS

@@ -11,10 +11,11 @@ cat ./templates/$JWT_APP_POLICY_TEMPLATE			\
   | sed -e "s#{{ APP_IDENTITY }}#$APP_IDENTITY#g"		\
   | sed -e "s#{{ JWT_CLAIM1_NAME }}#$JWT_CLAIM1_NAME#g"		\
   | sed -e "s#{{ JWT_CLAIM1_VALUE }}#$JWT_CLAIM1_VALUE#g"	\
-  | sed -e "s#{{ JWT_CLAIM2_NAME }}#$JWT_CLAIM2_NAME#g"		\
-  | sed -e "s#{{ JWT_CLAIM2_VALUE }}#$JWT_CLAIM2_VALUE#g"	\
-  | sed -e "s#{{ JWT_CLAIM3_NAME }}#$JWT_CLAIM3_NAME#g"		\
-  | sed -e "s#{{ JWT_CLAIM3_VALUE }}#$JWT_CLAIM3_VALUE#g"	\
   > ./policy/$APP_IDENTITY.yml
 
-conjur_append_policy root ./policy/$APP_IDENTITY.yml delete
+#  | sed -e "s#{{ JWT_CLAIM2_NAME }}#$JWT_CLAIM2_NAME#g"		\
+#  | sed -e "s#{{ JWT_CLAIM2_VALUE }}#$JWT_CLAIM2_VALUE#g"	\
+#  | sed -e "s#{{ JWT_CLAIM3_NAME }}#$JWT_CLAIM3_NAME#g"		\
+#  | sed -e "s#{{ JWT_CLAIM3_VALUE }}#$JWT_CLAIM3_VALUE#g"	\
+
+conjur_update_policy root ./policy/$APP_IDENTITY.yml

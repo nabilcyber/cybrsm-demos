@@ -3,17 +3,19 @@ FROM ubuntu:20.04
 # install utilities and dependencies
 RUN apt-get update -y \
     && apt-get install -y \
-    vim \
-    ssh \
-    curl \
-    wget \
-    unzip \
-    gnupg2 \
-    daemon \
-    psmisc  \
-    net-tools \
-    apt-utils \
-    openjdk-8-jre-headless
+    	    vim \
+	    ssh \
+	    curl \
+	    wget \
+	    unzip \
+	    gnupg2 \
+	    daemon \
+	    psmisc  \
+	    net-tools \
+	    apt-utils \
+	    openjdk-8-jre-headless \
+    && apt update -y \
+    && apt install -y git
 
 # add key to local repo
 RUN echo "deb https://downloads.cloudbees.com/cje/rolling/debian binary/" >> /etc/apt/sources.list \

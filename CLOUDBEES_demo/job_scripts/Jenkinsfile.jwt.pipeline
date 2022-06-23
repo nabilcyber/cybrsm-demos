@@ -4,7 +4,8 @@ node {
 	conjurSecretCredential(credentialsId: 'DemoVault-CICD-CICD_Secrets-MySQL-username', variable: 'DB_UNAME'),
         conjurSecretCredential(credentialsId: 'DemoVault-CICD-CICD_Secrets-MySQL-password', variable: 'DB_PWD')
 	]) {
-		sh "echo ######## >> /demo/demo.out"
+		sh "echo >> /demo/demo.out"
+		sh "echo Pipeline job: >> /demo/demo.out"
 		sh "date >> /demo/demo.out"
 		sh "echo Test: >> /demo/demo.out"
 		sh "echo DB_UNAME=$DB_UNAME >> /demo/demo.out"

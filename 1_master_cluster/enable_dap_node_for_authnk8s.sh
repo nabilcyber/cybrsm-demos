@@ -74,6 +74,8 @@ $DOCKER exec $CONJUR_LEADER_CONTAINER_NAME	\
 
 #EOF
 
+rm ca.cert ca.key
+
 }
 
 ############################

@@ -1,0 +1,4 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<com.cloudbees.jenkins.plugins.license.RegistrationStateConfiguration plugin="cloudbees-license@9.64">
+  <nextInstallStateName>NEW</nextInstallStateName>
+</com.cloudbees.jenkins.plugins.license.RegistrationStateConfiguration>

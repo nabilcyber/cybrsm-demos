@@ -7,10 +7,15 @@ source ../../bin/conjur_utils.sh
 main() {
 #  conjur_update_policy root ./delete.yml
 
+  source ./mb-branch2-pipeline.config
+  export POLICY_NAME=mb-branch2-pipeline
+  gen_and_load_policy
+exit 
+
   source ./proj1-freestyle.config
   export POLICY_NAME=proj1-freestyle
   gen_and_load_policy
-exit 
+
   source ./proj1-pipeline.config
   export POLICY_NAME=proj1-pipeline
   gen_and_load_policy

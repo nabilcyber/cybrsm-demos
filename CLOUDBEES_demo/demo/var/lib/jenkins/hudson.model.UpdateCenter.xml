@@ -1,0 +1,11 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<sites>
+  <jenkins-enterprise plugin="nectar-license@8.39">
+    <id>cje-offline</id>
+    <url>file:/var/cache/jenkins/war/WEB-INF/plugins/update-center.json</url>
+  </jenkins-enterprise>
+  <jenkins-enterprise plugin="nectar-license@8.39">
+    <id>cap-cje</id>
+    <url>https://jenkins-updates.cloudbees.com/update-center/envelope-cje/update-center.json</url>
+  </jenkins-enterprise>
+</sites>

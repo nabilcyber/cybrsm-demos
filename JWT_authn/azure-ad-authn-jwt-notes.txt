@@ -1,11 +1,25 @@
 Brief config notes for using Conjur authn-jwt with Azure AD-registered applications.
 Jody Hunt	26 Feb 2022
 
-GOAL: Use the appid claim in an Azure JWT to uniquely identify authorized applications for access to secrets in Conjur. This will typically be a user-facing application, where the user authenticates with an oauth2 workflow resulting in a short-lived Azure AD JWT specific to the application. The value of the appid claim is invariant across users. This serves to separate user identities from the application identity, and share the application's access to resources.
+GOAL: Use an application's Azure application ID in an Azure access token (JWT) to uniquely identify authorized applications for access to secrets in Conjur. This will typically be a user-facing application, where the user authenticates with an Oauth2/OIDC workflow resulting in a short-lived Azure AD JWT specific to the application (its access token). The value of the appid claim is invariant across users. This serves to separate user identities from the application identity, and allows the application to access resources on behalf of users.
+
+Curated topical Azure documentation reading list:
+  Workload identities:
+    https://docs.microsoft.com/en-us/azure/active-directory/develop/workload-identities-overview
+  Apps w/o human user authentication:
+    https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-app-types#daemons-and-server-side-apps
+  Oauth2 workflow:
+    https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/auth-oauth2
+    https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-client-creds-grant-flow
+  Access Tokens:
+    https://docs.microsoft.com/en-us/azure/active-directory/develop/access-tokens
+  Azure AD app registration:
+    https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app
+    https://docs.microsoft.com/en-us/azure/active-directory/develop/reference-app-manifest
 
 AZURE AD JWT OVERVIEW:
 
-  Azure AD supports two versions of OAuth2 tokens that can be identified by their headers or the version claim in their bodies.
+  Azure AD supports two versions of access tokens that can be identified by their headers or the version claim in their bodies.
 
   Azure AD v1 Token header:
     {
